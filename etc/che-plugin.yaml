@@ -4,7 +4,7 @@ endpoints:
     targetPort: 3010
 containers:
  - name: theia-dev
-   image: eclipse/che-theia-dev
+   image: eclipse/che-theia-dev:nightly
    editor-commands:
      - name: uname
        working-dir: "$(project)"
