@@ -1,19 +1,16 @@
 endpoints:
- -  name: "hello-ls"
+ -  name: "theia-dev-flow"
     public: true
-    targetPort: 8080
+    targetPort: 3010
 containers:
- - name: che-hello
-   image: wsskeleton/che-hello
+ - name: theia-dev
+   image: eclipse/che-theia-dev
    editor-commands:
-     - name: foo
+     - name: uname
        working-dir: "$(project)"
        command: ["uname", "-a"] 
    volumes:
      - mountPath: "/projects"
        name: projects
    ports:
-     - exposedPort: 8080
-editors:
-   - id: org.eclipse.che.editor.theia
-     plugins: [theia-remote-service:1.0.0]
+     - exposedPort: 3010
